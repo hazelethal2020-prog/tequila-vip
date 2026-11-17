@@ -222,6 +222,85 @@ body::before{content:"";position:fixed;top:0;left:50%;width:150vw;height:100vh;t
   .dbtn{font-size:15px}
   .panel{padding:34px 16px 20px}
 }
+
+/* v9：太陽／上升卡片 */
+.duo2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.duo2.one{grid-template-columns:minmax(0,240px);justify-content:center}
+.m2{position:relative;border-radius:16px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 6px 18px rgba(45,25,50,.10);text-align:center}
+.m2 .band{position:relative;padding:12px 10px 46px;color:var(--fg);background:var(--bgc)}
+.m2 .band::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:22px;background:#fff;border-radius:50% 50% 0 0/100% 100% 0 0}
+.m2.sun{--bgc:linear-gradient(160deg,#f3d58a,#e2b04c);--fg:#2d1932;--ac:#b8862b}
+.m2.asc{--bgc:linear-gradient(160deg,#4a2c52,#2d1932);--fg:#f5ecd9;--ac:#2d1932}
+.m2 .lb{font-size:12px;letter-spacing:.18em;font-weight:700;opacity:.85}
+.m2 .lb small{display:block;font-size:10.5px;letter-spacing:.3em;opacity:.7;margin-top:1px}
+.m2 .gl{position:relative;z-index:1;width:58px;height:58px;margin:-44px auto 0;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:32px;color:var(--ac);box-shadow:0 0 0 4px #fff,0 0 0 5px color-mix(in srgb,var(--ac) 35%,#fff)}
+.m2 .bd{padding:8px 12px 14px}
+.m2 .nm{font-size:21px;font-weight:700;line-height:1.3}
+.m2 .rg{font-size:12px;color:var(--muted)}
+.m2 .meta{margin:10px 0 8px;font-size:13px;font-weight:700;color:var(--ac)}
+.m2.asc .meta{color:#6b4a73}
+.m2 .kw{display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
+.m2 .kw span{display:inline-block;font-size:11.5px;border-radius:999px;padding:0 6px;line-height:1.7;border:1px solid color-mix(in srgb,var(--ac) 40%,#fff);color:var(--ink)}
+.m2 .ds{margin-top:9px;font-size:13px;line-height:1.6;color:var(--muted)}
+.read{border-radius:16px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.read h3{margin:0;padding:12px 14px 4px;font-size:15.5px;text-align:center}
+.read .sub2{text-align:center;font-size:12.5px;color:var(--muted);padding:0 14px 10px}
+.read .cols{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.read .col{padding:12px 12px 14px}.read .col+.col{border-left:1px solid var(--line)}
+.read .pill{display:inline-block;border-radius:8px;padding:2px 9px;font-size:12.5px;font-weight:700}
+.read .pill.sun{background:#eac063;color:#2d1932}.read .pill.asc{background:#2d1932;color:#eac063}
+.read .q{margin-top:8px;font-weight:700;font-size:14.5px}
+.read .ex{margin-top:4px;font-size:13px;line-height:1.6;color:var(--muted)}
+.read .both{padding:12px 14px;background:linear-gradient(90deg,#fbf3df,#f3eef6);border-top:1px solid var(--line);font-size:13.5px;line-height:1.7}
+.read .both .pill{background:#2d1932;color:#eac063;box-shadow:inset 0 0 0 1.5px #eac063;font-size:12px;padding:0 7px}
+/* v9：彩色卡片（大背景與每月） */
+.b2{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden;box-shadow:0 2px 8px rgba(45,25,50,.06);color:#2d1932;--ink:#2d1932;--muted:#5f4e64}
+.bglist .b2:first-child{margin-top:4px}
+.b2>summary{list-style:none;cursor:pointer}.b2>summary::-webkit-details-marker{display:none}
+.b2 .ph{display:flex;align-items:center;gap:10px;padding:10px 14px;min-height:56px;background:color-mix(in srgb,var(--c) 12%,#fff);border-bottom:1px solid color-mix(in srgb,var(--c) 30%,#fff)}
+details.b2:not([open]) .ph{border-bottom:0}
+.b2 .pg{flex:none;width:34px;height:34px;border-radius:50%;background:var(--c);color:#fff;display:grid;place-items:center;font-size:18px;line-height:1}
+.b2 .pn{font-weight:700;font-size:16px;line-height:1.3}
+.b2 .pk{font-size:12.5px;color:color-mix(in srgb,var(--c) 80%,#000);font-weight:700;letter-spacing:.03em}
+.b2 .now{margin-left:auto;text-align:right;font-size:12.5px;line-height:1.45;color:var(--muted)}.b2 .now b{display:block;font-size:14px;color:var(--ink)}
+.b2 .cv{flex:none;width:9px;height:9px;border-right:2px solid var(--c);border-bottom:2px solid var(--c);transform:rotate(45deg);margin:0 4px 4px 6px;transition:transform .2s}
+.b2[open] .cv{transform:rotate(-135deg);margin-bottom:-4px}
+.b2 .pb{padding:4px 14px 12px}
+.b2 .why{font-size:13.5px;line-height:1.6;color:var(--muted);margin:10px 0 4px;padding:8px 10px;border-left:3px solid var(--c);background:color-mix(in srgb,var(--c) 6%,#fff);border-radius:0 6px 6px 0}
+.b2 .per{display:flex;align-items:center;gap:8px;font-weight:700;font-size:13.5px;margin:12px 0 8px;color:color-mix(in srgb,var(--c) 85%,#000)}
+.b2 .per::after{content:"";flex:1;height:1px;background:color-mix(in srgb,var(--c) 30%,#fff)}
+.b2 .kv{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:start;margin:8px 0;font-size:14.5px;line-height:1.6}
+.b2 .kbox{display:flex;flex-direction:column;align-items:center;border-radius:9px;padding:4px 0 5px;line-height:1.35;text-align:center}
+.b2 .kbox b{font-size:12.5px;letter-spacing:.04em}.b2 .kbox span{font-size:13px;font-weight:500}
+.b2 .kbox.sun{background:#eac063;color:#2d1932}
+.b2 .kbox.asc{background:#2d1932;color:#f5ecd9}.b2 .kbox.asc b{color:#eac063}
+.b2 .kbox.both{background:linear-gradient(160deg,#4a2c52,#2d1932);color:#f5ecd9;box-shadow:inset 0 0 0 2px #eac063}
+.b2 .kbox.both b{color:#eac063}
+.b2 .kv p{padding-top:4px}
+.b2 .kv em.hot{display:block;font-style:normal;color:#8a2f4f;font-weight:700;font-size:13px;margin-top:4px;background:none;padding:0}
+.b2 .plain{margin:10px 0 2px;font-size:14.5px;line-height:1.7}
+.mbody .b2:first-child{margin-top:12px}
+.calm2{margin-top:12px;font-size:14px;padding:10px 12px;border-radius:10px;background:#fff;border:1px dashed var(--line);color:var(--muted)}
+@media (max-width:560px){.read .cols{grid-template-columns:1fr}.read .col+.col{border-left:0;border-top:1px solid var(--line)}.b2 .kv{grid-template-columns:72px 1fr;font-size:14px}}
+
+.hx{margin-top:4px;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;color:#2d1932}
+.hx>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 14px;font-weight:700;font-size:14.5px;background:#f6f1e6}
+.hx>summary::-webkit-details-marker{display:none}
+.hx .q{flex:none;width:24px;height:24px;border-radius:50%;background:#2d1932;color:#eac063;display:grid;place-items:center;font-size:13px}
+.hx .cv{flex:none;margin-left:auto;width:8px;height:8px;border-right:2px solid #2d1932;border-bottom:2px solid #2d1932;transform:rotate(45deg);margin-bottom:4px;transition:transform .2s}
+.hx[open] .cv{transform:rotate(-135deg);margin-bottom:-4px}
+.hx .in{padding:12px 14px 14px;font-size:14px;line-height:1.7}
+.hx .exl{margin-top:8px;font-size:13px;color:var(--muted)}
+.hx .ex{display:grid;grid-template-columns:auto 1fr;gap:8px 10px;align-items:center;margin:6px 0 12px}
+.hx .k{display:flex;flex-direction:column;align-items:center;border-radius:9px;padding:3px 10px;line-height:1.35;font-size:12.5px;font-weight:700}
+.hx .k.sun{background:#eac063;color:#2d1932}.hx .k.asc{background:#2d1932;color:#f5ecd9}.hx .k.asc b{color:#eac063}
+.hx .k span{font-weight:500}
+.hx .ex p{font-size:13.5px;line-height:1.55}
+.hx .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.hx .g{border:1px solid var(--line);border-radius:9px;padding:5px 6px;text-align:center;background:#faf7f0;line-height:1.35}
+.hx .g b{display:block;font-size:12px;color:#9a6f1f}.hx .g span{font-size:12.5px}
+.hx .tip{margin-top:10px;font-size:12.5px;color:var(--muted)}
+@media (min-width:600px){.hx .grid{grid-template-columns:repeat(6,1fr)}}
 </style>
 </head>
 <body>
@@ -491,46 +570,102 @@ function vh(ctx,fn){
 }
 
 /* ---------- 單一事件 ---------- */
+/* ---------- 白話解說（每一宮一句）---------- */
+const NMW=[null,
+ '適合許關於自己的願：改變形象、照顧身體，或給自己一個重新開始。',
+ '適合許金錢與自我價值的願：加薪、存到一筆錢，或更相信自己值得。',
+ '適合許學習與表達的願：考證照、開始寫作，或改善和身邊人的溝通。',
+ '適合許家與內心的願：找到理想住處、改善家人關係，或讓心更安定。',
+ '適合許戀愛與創作的願：遇見心動的人、完成一件作品，或多留時間玩樂。',
+ '適合許工作與健康的願：讓工作更有效率，養成運動或作息習慣。',
+ '適合許關係的願：遇見對的伴侶、找到好的合作夥伴，或讓關係更平衡。',
+ '適合許信任與轉化的願：處理債務與共同財務，或放下一段舊的依附。',
+ '適合許拓展視野的願：進修、出國、考試，或找到更清楚的人生方向。',
+ '適合許事業的願：升遷、轉職、被看見，或定下一個更大的目標。',
+ '適合許人脈與夢想的願：遇到志同道合的朋友，或朝長遠願景跨出一步。',
+ '適合許療癒的願：放下內耗、走出一段舊情緒，給自己獨處充電的時間。'];
+const FMW=[null,
+ '身心狀態會特別明顯。適合檢視自己是不是撐太久，放下勉強自己的習慣。',
+ '收支狀況容易浮上檯面。適合檢查花錢習慣，放下對金錢的不安。',
+ '溝通上的誤會容易攤開。適合把說不出口的話說清楚，或整理過多的資訊。',
+ '家裡或心裡累積的情緒容易浮現。適合好好整理居住空間與心情。',
+ '感情或創作可能有結果，也可能看清不適合的期待。適合放下勉強的關係。',
+ '身體與工作節奏會給你訊號。適合調整過勞的作息，放下不必要的工作。',
+ '伴侶或合作關係中累積的問題容易攤開。適合把話說清楚，看看付出是否平衡。',
+ '共同財務與信任議題容易浮現。適合處理界線，放下放不下的人事物。',
+ '某些信念或計畫來到一個段落。適合想想它們是否還適合現在的你。',
+ '工作上可能有結果或公開回饋。適合檢視職涯方向，放下不再適合的目標。',
+ '朋友圈或團體關係會有變化。適合取捨人際，整理對未來的期待。',
+ '累積的疲憊與情緒容易湧上。適合休息、獨處，放下內耗與逃避。'];
+const RTW={
+ mer:[null,'容易說錯話、被誤解，重要的自我介紹或形象調整多想一下再做。','帳務、付款容易出錯，轉帳和訂單多核對一次，大額消費延後。','訊息、合約、交通最容易出包，重要的事多確認一次再送出。','家中電器、網路或搬家事宜容易出狀況，和家人溝通多點耐心。','曖昧訊息容易誤會，舊情人可能出現；創作適合修改而不是新開。','工作流程容易出錯或延誤，檔案記得備份，健康報告看仔細。','和伴侶、合作對象容易雞同鴨講，簽約前把條件再確認一次。','共同帳戶、貸款、保險文件要仔細核對，信任問題先溝通不要猜。','行程、機票、簽證容易變動，出國或考試前多預留緩衝。','工作報告與溝通容易出包，和主管講重要的事要留書面紀錄。','群組訊息容易誤會、聚會臨時變卦；舊朋友可能突然聯絡。','壓抑的情緒和往事容易浮現，適合沉澱、回顧，不適合硬推進。'],
+ ven:[null,'對自己的外表不太滿意，換髮型、醫美、大改造型先緩一緩。','檢視收支與花錢習慣，想清楚什麼才是真正值得花的。','和身邊人的相處會重新檢視，以前沒說開的話可能重提。','和家人的感情議題會浮現，居家布置先別大改。','舊情人容易回來，感情適合回顧，不急著開始新戀情。','對工作的喜好會動搖，同事間的人情往來多留意。','伴侶關係進入重新檢視期，舊問題浮現是修復的機會。','共同財務與親密關係的界線要重新談，借貸先緩一緩。','對理想生活的想像在改變，遠距或異國關係需要多溝通。','對工作的熱情會重新檢視，職場人際關係多點耐心。','舊朋友可能重新聯絡，想想哪些關係值得留下。','舊的感情傷口會浮現，適合好好療癒，不適合偷偷來的戀情。'],
+ mar:[null,'精力下降、容易煩躁，運動量要循序漸進，避免衝動決定。','賺錢計畫容易卡關，投資與大額支出先觀望。','說話容易衝、開車容易急，爭執時先停三秒再回。','家裡容易起摩擦，裝修、搬家可能延誤。','感情容易鬧脾氣，運動時注意受傷，創作進度放慢沒關係。','工作量大但進度慢，注意過勞和小傷，別硬撐。','和伴侶、合作對象容易起衝突，先處理情緒再處理事情。','共同財務與權力議題容易拉扯，別在氣頭上做決定。','出國、進修計畫容易延誤，和人辯論信念時點到為止。','工作上容易和主管硬碰硬，衝刺計畫先調整策略再推。','團體合作容易意見不合，先把目標對齊再行動。','壓力往內累積，容易失眠或悶悶不樂，給自己安靜的出口。']};
+const BGW={
+ jup:[null,'十二年一次的個人擴張期。適合重新開始、讓自己被看見。','財運擴張期，收入機會變多，也要留意花費跟著變大。','學習與人脈運好，適合上短期課程、寫作、經營自媒體。','家運順，適合搬家、買房、改善家人關係。','戀愛與創作運旺，適合談戀愛、投入興趣，也有利孩子的事。','工作機會增加、做事變順，也是調整健康的好時機。','伴侶與合作運旺，容易遇到貴人或重要的另一半。','適合處理共同財務、借貸、投資，也容易得到他人資源。','進修、出國、考試容易遇到機會，值得把視野往外拓展。','事業容易被看見、被提拔，適合爭取更大的舞台。','朋友與貴人運旺，適合加入社群、實現長遠的願望。','好運藏在幕後。適合休息、療癒、整理內心，替下一輪成長蓄力。'],
+ sat:[null,'對自己要求變高、容易覺得累；適合打造長期的健康與形象。','金錢需要精打細算，適合建立存錢與理財的規矩。','學習與溝通需要下苦功，適合考證照、練表達能力。','家庭責任變重，可能要處理居住或家人的問題。','感情與創作要慢慢經營，認真投入的才會留下來。','工作量變大、要求變嚴，作息與健康需要好好管理。','關係進入考驗期，適合認真思考承諾與界線。','共同財務、貸款與信任關係需要立規矩，不適合靠運氣。','信念與學業需要扎實累積，適合長期進修或考試。','事業壓力大，但努力會被看見，是建立地位的時期。','朋友圈會篩選，留下真正可靠的人；長期目標要務實。','舊的壓力與恐懼浮現，適合沉澱、整理，替下一輪做準備。'],
+ ura:[null,'想改變自己、想要自由，外型或生活方式可能突然轉變。','收入容易起伏，適合發展新的賺錢方式，也要留緊急預備金。','想法變得靈活，可能突然想學新東西，或換到新環境。','居住或家庭可能有意外變動，例如搬家、家人狀況改變。','感情來得快去得快，容易遇到意外的心動或新的興趣。','工作方式可能突然改變，適合嘗試新工具或彈性的工作型態。','伴侶或合作關係容易出現變動，雙方都需要更多空間。','共同財務可能有意外變化，投資要分散風險。','想法和信念可能大翻轉，容易臨時決定出國或轉換跑道。','職涯方向可能突然轉彎，保留彈性比死守計畫重要。','朋友圈容易換血，可能認識很不一樣的新朋友。','直覺變強，潛意識的變化很大，也可能突然想放下某些東西。'],
+ nep:[null,'對自己的定位有點迷惘，適合探索，但別太在意別人的期待。','金錢容易糊塗，消費、借錢給別人要特別小心。','溝通容易誤會，重要的事寫下來；靈感和想像力變強。','對家有理想化的想像，家人之間的界線要清楚。','戀愛容易過度理想化，先看對方實際做了什麼。','工作容易方向模糊，或累到不自覺；注意身體發出的小訊號。','對伴侶容易美化，合作條件要白紙黑字。','金錢往來與信任的界線容易模糊，借貸、合資先白紙黑字。','容易被理想或信仰吸引，學東西前先查清楚來源。','事業目標容易搖擺，或對工作有不切實際的期待。','對朋友容易過度付出，或被團體的理想帶著走。','直覺和靈性變強，適合冥想、創作；也要小心逃避現實。'],
+ plu:[null,'個人蛻變期，外在形象和自我認同會慢慢徹底改變。','金錢觀念大改，收入結構可能重整，也會重新定義自我價值。','說話與思考方式深層改變，表達的影響力變強。','家庭與內在安全感正在重建，舊的家庭課題會被翻出來處理。','感情與創作會帶來深刻的轉變，容易遇到刻骨銘心的經驗。','工作方式與健康習慣正在徹底重整，舊的做法會被淘汰。','重要關係經歷深層轉化，不健康的關係模式會被迫改變。','金錢、信任與親密關係深度重整，是放下與重生的時期。','信念與人生觀深度轉變，可能因一段經歷改變看世界的方式。','事業與社會角色正在重塑，可能轉換跑道或掌握更多權力。','朋友圈和人生願景大洗牌，留下真正志同道合的人。','潛意識的舊傷被翻出來療癒，適合心理探索與放下。']};
+const INGW={
+ ven:[null,'魅力上升，適合打扮自己、拍照、約會，人緣變好。','財運與購物慾都變強，適合談加薪，也注意別衝動消費。','說話變得討喜，適合聯絡、表白、和身邊的人修補關係。','想待在家，適合布置空間、和家人吃飯、整理內心。','戀愛運與創作力上升，適合約會、玩樂、做喜歡的事。','工作氣氛變好，適合改善職場人際，也適合保養身體。','伴侶與合作運變好，適合談感情、談合作。','親密關係變深，也適合談共同財務、爭取資源。','想出走、想學新東西，適合旅行、上課，遠距戀情升溫。','工作上人緣變好，適合在職場展現自己、爭取好評。','朋友運變好、聚會多，適合擴展人脈。','適合獨處療癒、私下的浪漫；可能出現暗戀或秘密的心事。'],
+ mar:[null,'精力變旺，適合開始運動或啟動個人計畫；也容易急躁，說話留點餘地。','想賺錢的動力變強，適合衝業績、開源，注意衝動消費。','行動力放在學習與溝通，適合寫作、談判；開車和說話別太衝。','力氣用在家裡，適合整理、裝修；家人間容易有口角。','熱情高漲，適合追求喜歡的人、運動、投入創作。','工作效率變高、衝勁十足；注意別過勞、小心受傷。','關係中容易有火花也容易吵架，適合主動推進合作。','適合處理債務、稅務等硬事；遇到權力拉扯別硬碰。','想出發、想挑戰，適合安排旅行、報名課程、考試衝刺。','工作衝勁十足，適合主動爭取機會；注意別和主管硬碰硬。','適合帶頭辦活動、推團體計畫；朋友間意見衝突時先冷靜。','精力往內收，適合休息和處理拖延的事；壓抑的怒氣要找出口。']};
+INGW.jup=BGW.jup;
+const WHYM={
+ new:'新月是許願、播種的時間。新月落在哪一宮，就是這個月最適合許願的領域。',
+ full:'滿月是收成、放下的時間。這個領域的事容易浮上檯面，或來到一個段落。',
+ mer:'水星管溝通、文件、交通與 3C。逆行期間容易出錯、延誤，舊人舊事也容易回來。',
+ ven:'金星管感情、金錢與喜好。逆行期間適合重新檢視關係和花錢習慣，大額消費、換造型先緩一緩。',
+ mar:'火星管行動力與衝勁。逆行期間計畫容易卡關、情緒容易衝，適合調整策略，避免硬碰硬。',
+ iven:'金星代表人緣、感情與金錢，它走到哪一宮，好感與享受就會往那裡集中。',
+ imar:'火星代表行動力與衝勁，它走到哪一宮，你的力氣就會往那裡集中，大約停留一個半月。',
+ ijup:'木星代表機會與成長，它走到哪一宮，接下來約一年的好運就落在那裡。'};
+const WHYB={
+ jup:'看你的好運與機會在哪裡。大約一年換一個領域，知道它在哪，就知道這一年該把力氣放在哪。',
+ sat:'看你的壓力與功課在哪裡。大約兩年半換一個領域，這裡急不得，但撐過去會變成真正的實力。',
+ ura:'看生活哪裡容易出現意外的變動。大約七年換一個領域，提醒你這一塊別抓太緊。',
+ nep:'看你哪裡容易看不清、想得太美。大約十四年換一個領域，這一塊做決定前要多查證。',
+ plu:'看人生哪一塊正在徹底翻新。大約二十年換一個領域，變化很慢，但影響最深。'};
+const PCOL={jup:'#b8862b',sat:'#6b5a4e',ura:'#2f7f86',nep:'#3f62a8',plu:'#8a2f4f'};
+const JUP_SWITCH='2027-07-26';
+
+/* 太陽／上升宮位框＋解說；兩個視角同一宮時合併 */
+function kvHTML(ctx,sign,fn){
+  const rs=ctx.views.map(v=>({v,h:house(sign,v.sign)}));
+  const box=(cls,lab,h,t)=>`<div class="kv"><span class="kbox ${cls}"><b>${lab}</b><span>第 ${h} 宮</span></span><p>${t}</p></div>`;
+  if(rs.length===2&&rs[0].h===rs[1].h) return box('both','☉↑ 重點',rs[0].h,fn(rs[0].h)+'<em class="hot">✦ 太陽和上升都指向這裡，這段時間特別值得留意。</em>');
+  return rs.map(r=>box(r.v.k,r.v.k==='sun'?'☉ 太陽':'↑ 上升',r.h,fn(r.h))).join('');
+}
+function cardHTML(col,glyph,title,sub,why,inner,extra=''){
+  return `<div class="b2${extra}" style="--c:${col}"><div class="ph"><span class="pg" aria-hidden="true">${glyph}</span><div><div class="pn">${title}</div><div class="pk">${sub}</div></div></div><div class="pb">${why?`<p class="why">${why}</p>`:''}${inner}</div></div>`;
+}
+
 function moonItem(x,ctx){
   const [k,t,type,s,deg,ecl]=x,nm=SIGN[s][0],isNew=type==='new',ty=isNew?'新月':'滿月';
   const sol=!!ecl&&ecl.includes('日'),pen=!!ecl&&ecl.includes('半影');
-  const chip=`${isNew?'●':'○'} ${nm}${ty}${ecl?`（${ecl}）`:''}`;
-  const body=vh(ctx,v=>{
-    const h=house(s,v.sign),H=HS[h];
-    let html=`第 ${h} 宮「${H.area}」<br>${isNew?`適合許與${H.wish}有關的願望。`:`這個領域的事容易浮上檯面或告一段落。可以回頭看看：${H.rel}。`}`;
-    if(h===1) html+=`<br><em>${ty}就落在你的${v.label}星座，${isNew?'是為自己重新開始的好時機。':'情緒與身體感受會特別明顯，記得留時間給自己。'}</em>`;
-    if(h===7) html+=`<br><em>${ty}落在你的${v.label}對宮，${isNew?'伴侶與重要的人會是這次的主角。':'人際與伴侶的互動會被放大，先聽再回應。'}</em>`;
-    return {key:h,html};
-  });
-  let tail='';
-  if(isNew) tail=sol?`<p><em>這次同時是${ecl}。日食的能量較強烈，不少占星師建議這段時間以沉澱與觀察為主，願望可以留到下一次新月再許。</em></p>`
-                    :`<p><em>請在 ${t} 之後動筆，48 小時內寫完，一次 10 個以內。</em></p>`;
-  else if(pen) tail='<p><em>這次是半影月食，多數占星師認為力道較輕，當作加強版的滿月釋放就好。</em></p>';
-  return `<div class="ev"><div class="when">${md(k)}（${wd(k)}）${t}${pastTag(k)}</div><div class="what"><span class="chip ${type}">${chip}</span></div>
-    <div class="note"><p>${ty}落在${nm} ${deg}。</p>${body}${tail}</div></div>`;
+  let why=WHYM[type];
+  if(isNew) why+=sol?`這次同時是${ecl}，能量較強烈，不少占星師建議以沉澱與觀察為主，願望可以留到下一次新月再許。`:`請在 ${t} 之後動筆，48 小時內寫完，一次 10 個以內。`;
+  else if(pen) why+='這次是半影月食，力道較輕，當作加強版的滿月釋放就好。';
+  else if(ecl) why+=`這次同時是${ecl}，情緒與事件的力道會比平常的滿月強。`;
+  const sub=`${md(k)}（${wd(k)}）${t}・${nm}${ty} ${deg}${ecl?`・${ecl}`:''}${pastTag(k)}`;
+  return cardHTML(isNew?'#b8862b':'#7d6f86',isNew?'●':'○',isNew?'新月許願':'滿月釋放',sub,why,kvHTML(ctx,s,h=>(isNew?NMW:FMW)[h]));
 }
 function retroItem(r,ctx,first,last){
   const [p,a,b,signs]=r,nm=PL[p][0];
   const inA=a>=first&&a<=last,inB=b>=first&&b<=last;
-  const chip=inA&&inB?`℞ ${nm}逆行`:inA?`℞ ${nm}開始逆行`:inB?`℞ ${nm}恢復順行`:`℞ ${nm}逆行中`;
-  const when=inA&&inB?`${md(a)}–${md(b)}`:inA?`${md(a)}（${wd(a)}）`:inB?`${md(b)}（${wd(b)}）`:`${md(a)}–${md(b)}`;
+  const s=inB?signs[signs.length-1]:signs[0];
+  const where=signs.length>1?`從${SIGN[signs[0]][0]}退回${SIGN[signs[signs.length-1]][0]}`:`在${SIGN[s][0]}逆行`;
   const tag=inA&&!inB?pastTag(a):inB&&!inA?pastTag(b):(b<todayKey?' · 已結束':'');
-  const names=uniq(signs.map(s=>SIGN[s][0])).join('、');
-  const body=vh(ctx,v=>{
-    const hs=uniq(signs.map(s=>house(s,v.sign)));
-    return {key:hs.join(','),html:hs.map(h=>`第 ${h} 宮「${HS[h].area}」`).join('、')};
-  });
-  return `<div class="ev"><div class="when">${when}${tag}</div><div class="what"><span class="chip retro">${chip}</span></div>
-    <div class="note"><p>${md(a)} 到 ${md(b)} 在${names}逆行，牽動的領域：</p>${body}<p>${PH[p]}${TIP[p]}</p></div></div>`;
+  const sub=`${md(a)} ～ ${md(b)}（${wd(b)}）・${nm}${where}${tag}`;
+  const st=inB&&!inA?`${md(b)} 恢復順行，已接近尾聲。`:inA&&!inB?`${md(a)} 開始逆行，會持續到 ${md(b)}。`:'';
+  return cardHTML('#b8452f','℞',`${nm}逆行`,sub,WHYM[p]+st,kvHTML(ctx,s,h=>RTW[p][h]));
 }
-const ILEAD={ven:'人緣、感情與金錢的重心轉到',mar:'行動力與衝勁轉到',jup:'接下來約一年，機會與成長轉到'};
 function ingItem(k,p,s,ctx){
   const sn=SIGN[s][0],nm=PL[p][0];
   const verb=retroOn(k).some(r=>r[0]===p)?'退回':'進入';
-  const note=p==='sun'
-    ?'<p>你的生日季開始。能量與關注回到你身上，適合回顧自己這一年、為自己慶祝。</p>'
-    :vh(ctx,v=>{const h=house(s,v.sign);return {key:h,html:`${ILEAD[p]}第 ${h} 宮「${HS[h].area}」。`};});
-  return `<div class="ev"><div class="when">${md(k)}（${wd(k)}）${pastTag(k)}</div><div class="what"><span class="chip ingress">${PL[p][1]+V} ${nm}${verb}${sn}</span></div><div class="note">${note}</div></div>`;
+  const sub=`${md(k)}（${wd(k)}）起・${nm}${verb}${sn}${pastTag(k)}`;
+  if(p==='sun') return cardHTML('#b8862b','☉','生日季開始',sub,'',`<p class="plain">太陽回到你的星座，能量與關注回到你身上。適合回顧自己這一年、為自己慶祝，也替新的一歲許個願。</p>`);
+  return cardHTML(p==='jup'?'#b8862b':'#7a5784',PL[p][1]+V,`${nm}換星座`,sub,WHYM['i'+p],kvHTML(ctx,s,h=>INGW[p][h]));
 }
 
 /* ---------- 每月塔羅（偉特塔羅）----------
@@ -589,10 +724,12 @@ function monthHTML(y,m,ctx,i,isNow,isOpen){
   });
 
   // 展開內容
-  let body=tarotHTML(pre)+'<div class="sec">逆行提醒</div>';
-  body+=inner.length?inner.map(r=>retroItem(r,ctx,first,last)).join(''):'<div class="calm">這個月水星、金星、火星都在順行，推進計畫、簽約與溝通比較順手。</div>';
-  body+='<div class="sec">新月與滿月</div>'+moons.map(x=>moonItem(x,ctx)).join('');
-  if(ings.length) body+='<div class="sec">換星座</div>'+ings.map(([k,p,s])=>ingItem(k,p,s,ctx)).join('');
+  let body=tarotHTML(pre);
+  const evs=[...moons.map(x=>({k:x[0],h:moonItem(x,ctx)})),...ings.map(([k,p,s])=>({k,h:ingItem(k,p,s,ctx)}))];
+  inner.forEach(r=>evs.push({k:r[1]<first?first:r[1],h:retroItem(r,ctx,first,last)}));
+  evs.sort((a,b)=>a.k<b.k?-1:a.k>b.k?1:0);
+  if(!inner.length) body+='<p class="calm2">這個月水星、金星、火星都在順行，推進計畫、簽約與溝通比較順手。</p>';
+  body+=evs.map(e=>e.h).join('');
   if(outer.length){
     body+='<div class="bgline"><span class="lbl">背景：</span>'+outer.map(([p,a,b])=>{
       const inA=a>=first&&a<=last,inB=b>=first&&b<=last;
@@ -620,35 +757,65 @@ const OUT=[
  ['nep','海王星・模糊與理想',[['ari','']],'容易理想化、界線模糊；重要決定先看清楚事實再下。'],
  ['plu','冥王星・深層轉化',[['aqu','']],'正在經歷長期而深層的重整。']];
 function bgHTML(ctx){
-  const rows=OUT.map(([p,label,pls,txt])=>`<div class="bgrow"><div class="what"><span class="chip bg">${PL[p][1]+V} ${label}</span></div><div class="note">`+
-    pls.map(([s,when])=>`<p><b>${when}${SIGN[s][0]}</b></p>`+vh(ctx,v=>{const h=house(s,v.sign);return {key:h,html:`第 ${h} 宮「${HS[h].area}」`};})).join('')+`<p>${txt}</p></div></div>`).join('');
-  return `<section class="panel fade"><h2>這段時間的大背景</h2><p class="sub">不是只有一個月的事，是整段時間都在的底色。</p>
-    <details class="bgd" id="bgd"${bgOpen?' open':''}><summary><span class="o">看 ${OUT.length} 項長期背景 <span class="ar" aria-hidden="true">▾</span></span><span class="c">收合 <span class="ar" aria-hidden="true">▴</span></span></summary>${rows}</details></section>`;
+  const cards=OUT.map(([p,label,pls])=>{
+    const kw=label.split('・')[1],nm=PL[p][0];
+    let periods,curSign,curSub;
+    if(p==='jup'){
+      const before=todayKey<JUP_SWITCH;
+      periods=before?[['leo','現在 ～ 2027/7/26・木星在獅子座'],['vir','2027/7/26 起・木星進入處女座']]:[['vir','2027/7/26 起・木星在處女座']];
+      curSign=before?'leo':'vir';curSub=before?'7/26 起換到處女座':'2027/7/26 起';
+    }else{periods=[[pls[0][0],`${nm}在${SIGN[pls[0][0]][0]}`]];curSign=pls[0][0];curSub='整段期間';}
+    const inner=periods.map(([s,lab])=>`<div class="per">${lab}</div>`+kvHTML(ctx,s,h=>BGW[p][h])).join('');
+    return `<details class="b2" data-pl="${p}" style="--c:${PCOL[p]}"${bgOpen[p]?' open':''}><summary class="ph"><span class="pg" aria-hidden="true">${PL[p][1]+V}</span><div><div class="pn">${nm}</div><div class="pk">${kw}</div></div><div class="now"><b>在${SIGN[curSign][0]}</b>${curSub}</div><span class="cv" aria-hidden="true"></span></summary><div class="pb"><p class="why">${WHYB[p]}</p>${inner}</div></details>`;
+  }).join('');
+  return `<section class="panel fade"><h2>這段時間的大背景</h2><p class="sub">這五顆行星走得慢，影響的不是某一天，而是一整年以上的大方向。點開每顆星看它落在你生活的哪裡。</p><div class="bglist">${cards}</div></section>`;
 }
 
 /* ---------- 主畫面 ---------- */
-let state=null,lockNote=null,bgOpen=false;
+let state=null,lockNote=null,bgOpen={jup:true};
 function ctxOf(){
   const s=state,views=[{k:'sun',label:'太陽',icon:'☉',sign:s.sun}];
   if(s.asc) views.push({k:'asc',label:'上升',icon:'↑',sign:s.asc});
   return {views,sun:s.sun,asc:s.asc};
 }
+const HERO={
+ sun:{lb:'太陽星座',en:'SUN',meta:'內在的你',kw:['核心個性','在乎的事','人生方向'],ds:'你的核心個性、真正在乎的事，和想活成的樣子。'},
+ asc:{lb:'上升星座',en:'ASCENDANT',meta:'外在的你',kw:['第一印象','做事風格','生活領域'],ds:'別人對你的第一印象，和你面對世界、處理日常的方式。'}};
 function heroHTML(ctx){
   const s=state,hasAsc=!!s.asc;
-  const cards=ctx.views.map(v=>`<div class="mini"><div class="lbl">${v.label}星座</div><div class="g" aria-hidden="true">${SIGN[v.sign][1]+V}</div><b>${SIGN[v.sign][0]}</b><div class="rng">${v.k==='asc'?'依出生時間計算':RANGE[v.sign]}</div></div>`).join('');
+  const cards=ctx.views.map(v=>{const H=HERO[v.k];return `<div class="m2 ${v.k}"><div class="band"><div class="lb">${H.lb}<small>${H.en}</small></div></div><div class="gl" aria-hidden="true">${SIGN[v.sign][1]+V}</div>
+    <div class="bd"><div class="nm">${SIGN[v.sign][0]}</div><div class="rg">${v.k==='asc'?'依出生時間計算':RANGE[v.sign]}</div><div class="meta">${H.meta}</div>
+    <div class="kw">${H.kw.map(x=>`<span>${x}</span>`).join('')}</div><p class="ds">${H.ds}</p></div></div>`;}).join('');
   const notes=[];
   if(s.alt) notes.push(`你的生日在兩個星座的交界，實際是哪一個要看出生年與時間。目前先以<b>${SIGN[s.sun][0]}</b>顯示，<button type="button" class="linkbtn" data-act="alt">改看${SIGN[s.alt][0]}</button>。有出生時間的話，可以回到上方重新填寫。`);
   if(s.ascAlt) notes.push(`你的上升接近兩個星座的交界，出生時間差幾分鐘就可能是另一個。目前以<b>${SIGN[s.asc][0]}</b>上升顯示，<button type="button" class="linkbtn" data-act="altasc">改看${SIGN[s.ascAlt][0]}上升</button>。`);
   if(s.note) notes.push(s.note);
-  const how=hasAsc
-    ?'下面每一則，都同時用太陽與上升兩個視角為你對照：上升以你的上升星座為第 1 宮，對應日常生活的各個領域；太陽以你的太陽星座為第 1 宮，偏向核心個性與人生課題。兩個視角指到同一個領域時，就是那一段時間特別值得留意的重點。'
-    :'以你的太陽星座作為第 1 宮，往後依序是第 2、3、4… 宮，每一宮對應生活中的一個領域。有出生時間的話，可以回到上方重新填寫，加入上升星座。';
+  const colSun='<div class="col"><span class="pill sun">☉ 太陽・看出生日期</span><div class="q">像是你的「心」</div><p class="ex">說明你是什麼樣的人、為什麼而努力，影響比較深、比較長遠。</p></div>';
+  const colAsc='<div class="col"><span class="pill asc">↑ 上升・看出生時間</span><div class="q">像是你的「門面」</div><p class="ex">說明你怎麼和世界互動，也決定生活中工作、感情、金錢等領域落在哪裡，事件比較具體、有感。</p></div>';
+  const read=hasAsc
+    ?`<div class="read"><h3>太陽和上升有什麼不同？</h3><p class="sub2">兩個都是你，只是看的角度不同</p><div class="cols">${colSun}${colAsc}</div>
+      <div class="both"><b>怎麼看下面的運勢？</b>兩個視角各給一句建議：上升看<b>實際會發生的事</b>，太陽看<b>內心的感受與課題</b>。如果你的太陽和上升是同一個星座，兩個視角會落在同一個領域，合併成 <span class="pill">☉↑ 重點</span>，代表那段時間特別值得留意。</div></div>`
+    :`<div class="read"><h3>太陽和上升有什麼不同？</h3><p class="sub2">兩個都是你，只是看的角度不同</p><div class="cols">${colSun}${colAsc}</div>
+      <div class="both"><b>目前只用太陽星座看運勢。</b>上升星座要用出生時間計算；有出生時間的話，可以回到上方重新填寫，就能同時看到兩個視角。</div></div>`;
   return `<section class="panel hero fade" id="hero"><h2>${hasAsc?'你的太陽與上升':'你的太陽星座'}</h2>
     <p class="sub">${hasAsc?`出生 ${s.info.y}/${s.m}/${s.d} ${s.info.time}・${s.info.place}`:`出生月日 ${s.m}/${s.d}`}</p>
-    <div class="duo ${ctx.views.length===1?'one':''}" style="--n:${ctx.views.length}">${cards}</div>
+    <div class="duo2 ${ctx.views.length===1?'one':''}">${cards}</div>
     ${notes.map(n=>`<div class="cusp">${n}</div>`).join('')}
-    <p class="how">${how}</p>
+    ${read}
     <button type="button" class="linkbtn again" data-act="again">換一個生日</button></section>`;
+}
+
+const HSHORT=['','自己','金錢','溝通學習','家與內心','戀愛創作','工作健康','伴侶合作','信任轉化','進修遠行','事業目標','朋友願景','休息放下'];
+function houseHelp(ctx,ym){
+  const pre=ym?`${ym[0]}-${pad(ym[1]+1)}`:'';
+  const mo=MOONS.find(x=>x[0].startsWith(pre))||MOONS[0];
+  const ex=ctx.views.map(v=>{const h=house(mo[3],v.sign),sun=v.k==='sun';
+    return `<span class="k ${v.k}">${sun?'☉ 太陽':'<b>↑ 上升</b>'}<span>第 ${h} 宮</span></span><p>用你的<b>${v.label}星座</b>來數，落在第 ${h} 個領域「${HS[h].short}」→ ${sun?'心裡會在意這一塊':'實際生活會發生在這一塊'}。</p>`;}).join('');
+  return `<details class="hx"><summary><span class="q" aria-hidden="true">?</span>${ctx.views.length>1?'太陽／上升':'太陽'}「第 ? 宮」是什麼意思？<span class="cv" aria-hidden="true"></span></summary><div class="in">
+    <p>占星把生活分成 <b>12 個領域</b>，叫做「宮位」。每顆星、每次新月滿月，都會落在其中一個領域，告訴你那段時間<b>事情會發生在生活的哪一塊</b>。</p>
+    <p class="exl">以 ${md(mo[0])} 的${SIGN[mo[3]][0]}${mo[2]==='new'?'新月':'滿月'}為例：</p><div class="ex">${ex}</div>
+    <b>12 個領域對照表</b><div class="grid">${HSHORT.slice(1).map((x,i)=>`<div class="g"><b>第 ${i+1} 宮</b><span>${x}</span></div>`).join('')}</div>
+    ${ctx.views.length>1?(ctx.sun===ctx.asc?'<p class="tip">你的太陽和上升是同一個星座，所以兩個視角永遠落在同一宮，會合併成「☉↑ 重點」。</p>':'<p class="tip">同一件星象，太陽和上升會落在不同的宮，因為起算的星座不同，兩個都參考就好。</p>'):''}</div></details>`;
 }
 function monthsHTML(ctx,openArr){
   const nowKey=`${todayD.getFullYear()}-${pad(todayD.getMonth()+1)}`,key=([y,m])=>`${y}-${pad(m+1)}`;
@@ -657,6 +824,7 @@ function monthsHTML(ctx,openArr){
   if(!inRange) start=nowKey<key(MONTHS[0])?0:MONTHS.length-1;
   const list=MONTHS.slice(start),openN=Math.max(1,Math.min(unlockedEnd-start+1,list.length)),locked=list.length-openN;
   const legend='<div class="legend" aria-label="圖例"><span class="chip new">● 新月許願</span><span class="chip full">○ 滿月釋放</span><span class="chip retro">℞ 逆行</span><span class="chip ingress">→ 換星座</span></div>'+`<p class="vkey">${ctx.views.map(v=>`<b>${v.icon}</b> ${v.label}星座視角`).join('　')}</p>`;
+  const legendHelp=houseHelp(ctx,list[0]);
   const open=list.slice(0,openN).map(([y,mo],i)=>{
     const isNow=inRange&&i===0;
     return monthHTML(y,mo,ctx,i,isNow,openArr?!!openArr[i]:isNow);
@@ -671,7 +839,7 @@ function monthsHTML(ctx,openArr){
   }else if(openN>1){
     lock=`<p class="okline">已解鎖到 ${ymOf(MONTHS.length-1)}，全部月份都可以看</p>`;
   }
-  return `<section class="panel months"><h2>每個月要留意的</h2><p class="sub">點開每個月，看新月、滿月與逆行落在你生活的哪個領域。</p>${legend}<div class="mlist">${open}${lock}</div></section>`;
+  return `<section class="panel months"><h2>每個月要留意的</h2><p class="sub">點開每個月，看新月、滿月與逆行落在你生活的哪個領域。</p>${legend}${legendHelp}<div class="mlist">${open}${lock}</div></section>`;
 }
 function render(opts={}){
   const ctx=ctxOf(),r=$('#result');
@@ -735,7 +903,7 @@ $('#f').addEventListener('submit',e=>{
 });
 
 const R=$('#result');
-R.addEventListener('toggle',e=>{if(e.target.id==='bgd')bgOpen=e.target.open;},true);
+R.addEventListener('toggle',e=>{const p=e.target.dataset&&e.target.dataset.pl;if(p)bgOpen[p]=e.target.open;},true);
 R.addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');
   if(!b||!state) return;
@@ -743,7 +911,7 @@ R.addEventListener('click',e=>{
   if(a==='alt'){const x=state.alt;state.alt=state.sun;state.sun=x;rerender();}
   if(a==='altasc'){const x=state.ascAlt;state.ascAlt=state.asc;state.asc=x;rerender();}
   if(a==='focuslock'){const u=$('#serial');if(u){u.focus({preventScroll:true});u.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}}
-  if(a==='again'){state=null;bgOpen=false;R.innerHTML='';window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});bm.focus({preventScroll:true});}
+  if(a==='again'){state=null;bgOpen={jup:true};R.innerHTML='';window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});bm.focus({preventScroll:true});}
 });
 // 序號解鎖
 R.addEventListener('submit',e=>{
